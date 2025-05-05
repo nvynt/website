@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TUGAS4</title>
+  <style>
+   /* Base Styles */
+   :root {
+      --primary-color: #fff8e1;
+      --secondary-color: #ffe082;
+      --accent-color:  #fdd835;
+      --dark-color: #2b2d42;
+      --light-color: #f8f9fa;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 100px;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+      margin: 20px 0;
+    }
+
+   /* Fixed Footer */
+   .team-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    .footer-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .member-card {
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      width: 80px;
+    }
+
+    .photo-frame {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .member-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .member-name {
+      color: white;
+      font-size: 0.8em;
+      margin-top: 8px;
+      font-weight: 500;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .photo-frame {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .team-members {
+        gap: 15px;
+      }
+    }
+
+    /* Form Styles */
+    .form-frame {
+      background-color: #fff8e1;
+      padding: 20px;
+      border: 2px solid #333;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .photo-frame {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .team-members {
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Form Pendaftaran</h1>
+    <div class="form-frame">
+      <form>
+        <label for="name">Nama:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="gender">Jenis Kelamin:</label><br>
+        <select id="gender" name="gender">
+          <option value="laki_laki">Laki-laki</option>
+          <option value="perempuan">Perempuan</option>
+        </select><br><br>
+        
+        <label for="agama">Agama:</label><br>
+        <input type="radio" name="agama" value="islam"> Islam<br>
+        <input type="radio" name="agama" value="katholik"> Katholik<br>
+        <input type="radio" name="agama" value="protestan"> Protestan<br>
+        <input type="radio" name="agama" value="hindu"> Hindu<br>
+        <input type="radio" name="agama" value="budha"> Budha<br><br>
+
+        <label for="hobby">Hobby:</label><br>
+        <input type="checkbox" name="hobby" value="browsing"> Browsing<br>
+        <input type="checkbox" name="hobby" value="game"> Game<br>
+        <input type="checkbox" name="hobby" value="olahraga"> Olahraga<br><br>
+        
+        <label for="alamat">Alamat:</label><br>
+        <textarea id="alamat" name="alamat"></textarea><br><br>
+        
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Batal">
+      </form>
+    </div>
+  </div>
+
+  <!-- Fixed Team Footer -->
+<footer class="team-footer">
+  <div class="footer-container">
+    <div class="team-members">
+      <div class="member-card">
+        <div class="photo-frame">
+          <img src="potopoto.jpg" class="member-photo">
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="photo-frame">
+          <img src="potoayam.jpg" class="member-photo">
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="photo-frame">
+          <img src="potokita.jpg" class="member-photo">
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="photo-frame">
+          <img src="potocitra.webp" class="member-photo">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

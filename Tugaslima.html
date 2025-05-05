@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TUGAS5</title>
+  <style>
+    /* Variabel Warna */
+    :root {
+      --primary-color: #fff8e1; /* Kuning lembut */
+      --secondary-color: #ffe082; /* Kuning lebih terang */
+      --accent-color: #fdd835;
+      --dark-color: #2b2d42;
+      --light-color: #7fffd4; /* Latar belakang utama Aqua Marine */
+      --text-color: #6c6c6c; /* Font abu-abu lembut */
+    }
+
+    body {
+      background-color: var(--light-color); /* Latar belakang utama Aqua Marine */
+      font-family: "Times New Roman", Times, serif;
+      font-size: 16px;
+      color: var(--text-color); /* Font abu-abu lembut */
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    bebas {
+      text-decoration: underline;
+      font-style: italic;
+      font-size: 16px;
+      color: darkred;
+    }
+
+    .kelas {
+      font-family: "Courier New", Courier, monospace;
+      text-align: center;
+      color: darkred;
+    }
+
+    #pakaiID {
+      font-family: "Courier New", Courier, monospace;
+      font-style: italic;
+      text-align: center;
+      color: darkred;
+    }
+
+    terserah {
+      display: block;
+      margin: 1cm 2cm 1cm 1cm;
+      padding: 10px;
+      background-color: #fff3e0; /* Background kuning lembut */
+    }
+
+    /* Layout Style */
+    #header, #navigasi, #isi, #footer {
+      border: 1px solid #000;
+      padding: 10px;
+      margin: 10px;
+      background-color: #fff; /* Latar belakang putih untuk elemen */
+    }
+
+    #header {
+      background-color: var(--primary-color); /* Header dengan kuning lembut */
+    }
+
+    #navigasi {
+      background-color: var(--secondary-color); /* Navigasi dengan kuning lebih terang */
+    }
+
+    #footer {
+      background-color: var(--primary-color); /* Footer dengan kuning lembut */
+    }
+
+    #isi {
+      background-color: var(--secondary-color); /* Isi dengan kuning lebih terang */
+    }
+
+    #navigasi ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #navigasi ul li {
+      margin: 5px 0;
+    }
+
+    .gambar {
+      float: left;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      padding: 4px;
+      background: #fff;
+    }
+
+    /* Footer Tim Tetap di Bawah */
+    .team-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      padding: 10px 0;
+    }
+
+    .footer-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .member-card {
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      width: 80px;
+    }
+
+    .photo-frame {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+    }
+
+    .member-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align: center;">CONTOH LATIHAN CSS</h2>
+  <ol type="1">
+    <li><b>Latihan External</b><br>
+      Ket: Dengan external CSS, yaitu menentukan background berwarna aquamarine.</li><br>
+
+    <li><b>Latihan Selector</b><br>
+      Contoh penggunaan selector untuk merubah body secara otomatis<br>
+      Menggunakan Times New Roman, ukuran 16px, warna hijau tua.</li><br>
+
+    <li><b>Latihan Selector bebas</b><br>
+      Ini tidak pakai selector bebas.<br>
+      <bebas>Ini pakai selector bebas, font Times New Roman, cetak miring, warna darkred.</bebas></li><br>
+
+    <li><b>Latihan Selector class</b><br>
+      <p class="kelas">Ini dikenai selector pakai kelas, font Courier New, rata tengah, warna darkred.</p>
+      <p>Ini tidak dikenai efek CSS karena tidak menggunakan class.</p></li><br>
+
+    <li><b>Latihan Selector id</b><br>
+      <p id="pakaiID">Menggunakan selector ID: font Courier New, rata tengah, cetak miring, warna darkred.</p></li><br>
+
+    <li><b>Latihan Format Halaman</b><br>
+      <terserah>Format halaman dengan batas kiri 1cm, kanan 2cm, atas 1cm, bawah 1cm, background warna hijau.</terserah></li><br>
+
+    <li><b>Latihan Layout</b><br>
+      <div id="header">
+        <h2>Selamat Datang di Website Kami</h2>
+      </div>
+      <div id="navigasi">
+        <h3>Menu Navigasi</h3>
+        <ul>
+          <li><a href="menu6.html" target="web">Beranda</a></li>
+          <li><a href="profil.html" target="web">KRS</a></li>
+          <li><a href="tabel.html" target="web">KHS</a></li>
+          <li><a href="tabel.html" target="web">Daftar</a></li>
+        </ul>
+      </div>
+      <div id="isi">
+        <img src="matahari.jpg" height="160" width="250" class="gambar" />
+        <p>Ini adalah bagian isi. CSS membuat layout lebih menarik dan tidak perlu tabel. Kelebihannya fleksibel dan ukuran file lebih kecil.</p>
+        <p>Jika menggunakan tabel, semakin banyak sel akan memperbesar ukuran file dan memperlambat loading halaman.</p>
+      </div>
+      <div id="footer">
+        <p>Copyright &copy; 2013 by Mr. B</p>
+      </div>
+    </li>
+  </ol>
+
+  <!-- Fixed Footer Team -->
+  <footer class="team-footer">
+    <div class="footer-container">
+      <div class="team-members">
+        <div class="member-card"><div class="photo-frame"><img src="potopoto.jpg" class="member-photo"></div></div>
+        <div class="member-card"><div class="photo-frame"><img src="potoayam.jpg" class="member-photo"></div></div>
+        <div class="member-card"><div class="photo-frame"><img src="potokita.jpg" class="member-photo"></div></div>
+        <div class="member-card"><div class="photo-frame"><img src="potocitra.webp" class="member-photo"></div></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    /* Base Styles */
+:root {
+    --primary-color: #fff8e1;
+    --secondary-color: #ffe082;
+    --accent-color: #fdd835;
+    --dark-color: #2b2d42;
+    --light-color: #f8f9fa;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f7fa;
+}
+
+.content {
+    flex: 1 0 auto;
+    padding: 2rem;
+}
+
+/* Footer Styles */
+.footer {
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 0 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+/* Team Members Grid */
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.member-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+}
+
+.photo-frame {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    border: 5px solid var(--accent-color);
+    overflow: hidden;
+    position: relative;
+}
+
+.member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.member-card:hover .member-photo {
+    transform: scale(1.1);
+}
+
+.social-links {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.member-card:hover .social-links {
+    bottom: 10px;
+    opacity: 1;
+}
+
+.social-links a {
+    color: white;
+    background-color: var(--accent-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--secondary-color);
+}
+
+.member-card h4 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.member-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-title {
+        font-size: 1.5rem;
+    }
+}
+</style>
+<body>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h3 class="footer-title">Our Awesome Team</h3>
+            <div class="team-members">
+                <div class="member-card">
+                    <div class="photo-frame">
+                        <img src="potopoto.jpg" alt="Novi" class="member-photo">
+                    
+                    </div>
+                    <h4>Novi Yanti</h4>
+                    <p>24451036</p>
+                </div>
+                
+                <div class="member-card">
+                    <div class="photo-frame">
+                        <img src="potoayam.jpg" alt="Tri" class="member-photo">
+                        
+                    </div>
+                    <h4>Tri Kurnia Magfiroh</h4>
+                    <p>24451044</p>
+                </div>
+                
+                <div class="member-card">
+                    <div class="photo-frame">
+                        <img src="potokita.jpg" alt="Juni" class="member-photo">
+                        
+                    </div>
+                    <h4>Juni Ardelia</h4>
+                    <p>24451027</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="photo-frame">
+                        <img src="potocitra.webp" alt="Citra" class="member-photo">
+                        
+                    </div>
+                    <h4>Citra Armiani</h4>
+                    <p>24451012</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Our Awesome Team. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

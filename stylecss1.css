@@ -1,0 +1,49 @@
+:root {
+    --primary-color: #fff8e1;
+    --secondary-color: #ffe082;
+    --accent-color: #fdd835;
+    --dark-color: #2b2d42;
+    --light-color: #f8f9fa;
+    --text-color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: var(--primary-color); /* Warna merah marun */
+    color: white; 
+    text-align: center;
+    padding: 5px;
+}
+
+footer {
+    background-color: #800000; /* Warna merah marun */
+    color: white; 
+    text-align: center; 
+    padding: 10px;
+}
+
+h2 {
+    color: blue; /* Warna biru untuk heading */
+}
+
+ul {
+    list-style-type: none; /* Menghilangkan bullet point */
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0; /* Jarak antar item */
+}
+
+a {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: black; /* Warna teks link */
+}
+
+a:hover {
+    color: red; /* Warna saat mouse hover */
+}
+

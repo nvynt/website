@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TUGAS1</title>
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #fff8e1;
+      --secondary-color:  #ffe082;
+      --accent-color: #fdd835;
+      --dark-color: #2b2d42;
+      --light-color: #f8f9fa;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 100px;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+      margin: 20px 0;
+    }
+
+    /* Fixed Footer */
+    .team-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    .footer-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .member-card {
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      width: 80px;
+    }
+
+    .photo-frame {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .member-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .member-name {
+      color: white;
+      font-size: 0.8em;
+      margin-top: 8px;
+      font-weight: 500;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .photo-frame {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .team-members {
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Your existing content here -->
+    <br>
+    <font size="+1">Besar Huruf +1</font><br>
+    <font face="Arial, Helvetica, sans-serif">Jenis Huruf Arial</font><br>
+    <font color="#FF0000">warna Huruf merah</font><br>
+    <font color="red">Warna Huruf Merah</font><br>
+    <font face="Arial, Helvetica, sans-serif" size="+2" color="#0000FF">gabungan huruf</font>
+    <br/>
+    <hr>
+    <br>
+    <b>Tuliskan Bold</b><br>
+    <i>cetak miring</i><br>
+    <u>garis bawah</u><br>
+    <strike>Garis Di tengah</strike><br>
+    <big>huruf lebih besar</big><br>
+    <small>huruf lebih kecil</small> a<sub>a</sub> 4<sub>2</sub>
+    <br/>
+    <hr>
+    <br>
+    <h1>Heading Satu</h1>
+    <h2>Heading Dua</h2>
+    <h3>Heading tiga</h3>
+    <h4>Heading empat</h4>
+    <h5>Heading lima</h5>
+    <h6>Heading enam</h6>
+    <br/>
+    <hr>
+    <h2>Program Studi</h2>
+    <ol type="1">
+      <li>Program S-1</li>
+      <ul type="circle">
+        <li>Teknik Informatika</li>
+        <li>Sistem Informasi</li>
+      </ul>
+      <li>Program D-II</li>
+      <ul type="disc">
+        <li>Teknik Informatika</li>
+        <li>Manajemen Informatika</li>
+      </ul>
+    </ol>
+    <hr>
+    <br>
+    <h1>LATGAMBAR</h1>
+    <p>Gambar Tanpa Format</p>
+    <img src="potopoto.jpg" height="100">
+    <p>Gambar Dengan Format hspace</p>
+    <img src="potoayam.jpg" height="100" hspace="100">
+    <p>Gambar Dengan Border</p>
+    <img src="potokita.jpg" border="2" height="100">
+    <p>Gambar Dengan hspace</p>
+    <img src="potocitra.webp" border="2" height="100" hspace="100">
+    <hr>
+
+  </div>
+
+  <!-- Fixed Team Footer -->
+  <footer class="team-footer">
+    <div class="footer-container">
+      <div class="team-members">
+        <div class="member-card">
+          <div class="photo-frame">
+            <img src="potopoto.jpg" alt="Novi" class="member-photo">
+          </div>
+        </div>
+        
+        <div class="member-card">
+          <div class="photo-frame">
+            <img src="potoayam.jpg" alt="Tri" class="member-photo">
+          </div>
+        </div>
+        
+        <div class="member-card">
+          <div class="photo-frame">
+            <img src="potokita.jpg" alt="Juni" class="member-photo">
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="photo-frame">
+            <img src="potocitra.webp" alt="Citra" class="member-photo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
