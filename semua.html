@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Web: Soal 1–4</title>
+  <style>
+    :root {
+      --primary-color: #fff8e1;
+      --secondary-color: #ffe082;
+      --accent-color: #fdd835;
+      --dark-color: #2b2d42;
+      --light-color: #f8f9fa;
+      --text-color: #333;
+    }
+
+    .tab {
+      display: none;
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+    .tab.active {
+      display: block;
+    }
+    button.tab-btn {
+      margin: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    input, select {
+      margin: 5px 0;
+    }
+     /* Fixed Footer */
+   .team-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    .footer-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .member-card {
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      width: 80px;
+    }
+
+    .photo-frame {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .member-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .member-name {
+      color: white;
+      font-size: 0.8em;
+      margin-top: 8px;
+      font-weight: 500;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Latihan Web Interaktif</h2>
+
+  <!-- Navigation Tabs -->
+  <div>
+    <button class="tab-btn" onclick="openTab('latihan1')">Latihan 1: Cicilan</button>
+    <button class="tab-btn" onclick="openTab('latihan2')">Latihan 2: Diskon</button>
+    <button class="tab-btn" onclick="openTab('latihan3')">Latihan 3: Tabungan</button>
+    <button class="tab-btn" onclick="openTab('latihan4')">Latihan 4: Polri</button>
+  </div>
+
+  <!-- Latihan 1 -->
+  <div id="latihan1" class="tab">
+    <h3>Latihan 1: Cicilan Barang</h3>
+    <label>Harga Barang: <input type="number" id="harga1"></label><br>
+    <label>Besar Cicilan per Bulan: <input type="number" id="cicilan1"></label><br>
+    <label>Lama Cicilan (bulan): <input type="number" id="lama1"></label><br>
+    <button onclick="hitungCicilan()">Hitung</button>
+    <div id="hasil1"></div>
+  </div>
+
+  <!-- Latihan 2 -->
+  <div id="latihan2" class="tab">
+    <h3>Latihan 2: Diskon Barang</h3>
+    <label>Harga Barang: <input type="number" id="harga2"></label><br>
+    <label>Jumlah Barang: <input type="number" id="jumlah2"></label><br>
+    <button onclick="hitungDiskon()">Hitung</button>
+    <div id="hasil2"></div>
+  </div>
+
+  <!-- Latihan 3 -->
+  <div id="latihan3" class="tab">
+    <h3>Latihan 3: Tabungan dengan Bunga Majemuk</h3>
+    <label>Tabungan Awal: <input type="number" id="tabunganAwal"></label><br>
+    <label>Bunga per Tahun (%): <input type="number" id="bunga"></label><br>
+    <label>Lama Menabung (tahun): <input type="number" id="lama"></label><br>
+    <button onclick="hitungTabungan()">Hitung</button>
+    <div id="hasil3"></div>
+  </div>
+
+  <!-- Latihan 4 -->
+  <div id="latihan4" class="tab">
+    <h3>Latihan 4: Seleksi Penerimaan Polri</h3>
+    <label>Jenis Kelamin:
+      <select id="jenisKelamin">
+        <option value="laki-laki">Laki-laki</option>
+        <option value="perempuan">Perempuan</option>
+      </select>
+    </label><br>
+    <label>Tinggi Badan (cm): <input type="number" id="tinggi"></label><br>
+    <label>Berat Badan (kg): <input type="number" id="berat"></label><br>
+    <label>IPK: <input type="number" step="0.01" id="ipk"></label><br>
+    <label>Pendidikan Terakhir:
+      <select id="pendidikan">
+        <option value="D-III">D-III</option>
+        <option value="S1">S1</option>
+        <option value="SMA">SMA</option>
+      </select>
+    </label><br>
+    <label>Usia: <input type="number" id="usia"></label><br>
+    <button onclick="cekPenerimaan()">Cek Hasil Seleksi</button>
+    <div id="hasil4"></div>
+  </div>
+
+  <script>
+    function openTab(id) {
+      document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    function hitungCicilan() {
+      let harga = parseFloat(document.getElementById("harga1").value);
+      let cicilan = parseFloat(document.getElementById("cicilan1").value);
+      let lama = parseInt(document.getElementById("lama1").value);
+      let hasilHTML = "";
+      let sisa = harga;
+
+      for (let i = 1; i <= lama; i++) {
+        sisa -= cicilan;
+        hasilHTML += `<p>Bulan ${i}: Bayar Rp${cicilan.toLocaleString()}, Sisa: Rp${Math.max(sisa, 0).toLocaleString()}</p>`;
+      }
+      hasilHTML += `<hr><strong>Total: Rp${(cicilan * lama).toLocaleString()}</strong>`;
+      document.getElementById("hasil1").innerHTML = hasilHTML;
+    }
+
+    function hitungDiskon() {
+      const harga = parseFloat(document.getElementById("harga2").value);
+      const jumlah = parseInt(document.getElementById("jumlah2").value);
+      const total = harga * jumlah;
+      const diskon = jumlah >= 3 ? total * 0.05 : 0;
+      const totalBayar = total - diskon;
+      document.getElementById("hasil2").innerHTML = `
+        <p>Total: Rp${total.toLocaleString()}</p>
+        <p>Diskon: Rp${diskon.toLocaleString()}</p>
+        <p><strong>Total Bayar: Rp${totalBayar.toLocaleString()}</strong></p>
+      `;
+    }
+
+    function hitungTabungan() {
+      const awal = parseFloat(document.getElementById("tabunganAwal").value);
+      const bunga = parseFloat(document.getElementById("bunga").value) / 12 / 100;
+      const tahun = parseInt(document.getElementById("lama").value);
+      const bulanTotal = tahun * 12;
+      let saldo = awal;
+      let hasil = "";
+      for (let i = 1; i <= bulanTotal; i++) {
+        const bungaBulan = saldo * bunga;
+        saldo += bungaBulan;
+        hasil += `<p>Bulan ${i}: Saldo Awal: Rp${(saldo - bungaBulan).toLocaleString(undefined, {maximumFractionDigits:2})}, Bunga: Rp${bungaBulan.toLocaleString(undefined, {maximumFractionDigits:2})}, Saldo Akhir: Rp${saldo.toLocaleString(undefined, {maximumFractionDigits:2})}</p>`;
+      }
+      hasil += `<hr><strong>Saldo Akhir: Rp${saldo.toLocaleString(undefined, {maximumFractionDigits:2})}</strong>`;
+      document.getElementById("hasil3").innerHTML = hasil;
+    }
+
+    function cekPenerimaan() {
+      const jenis = document.getElementById("jenisKelamin").value;
+      const tinggi = parseInt(document.getElementById("tinggi").value);
+      const berat = parseInt(document.getElementById("berat").value);
+      const ipk = parseFloat(document.getElementById("ipk").value);
+      const pendidikan = document.getElementById("pendidikan").value;
+      const usia = parseInt(document.getElementById("usia").value);
+
+      let diterima = false;
+      let kriteria = "";
+
+      if (jenis === "laki-laki") {
+        diterima = tinggi >= 175 && tinggi <= 185 &&
+                   berat === tinggi - 110 &&
+                   ipk >= 3 &&
+                   pendidikan === "D-III" &&
+                   usia >= 22 && usia <= 25;
+        kriteria = `Berat ideal: ${tinggi - 110} kg`;
+      } else {
+        diterima = tinggi >= 165 && tinggi <= 175 &&
+                   berat === tinggi - 109 &&
+                   ipk >= 3 &&
+                   pendidikan === "D-III" &&
+                   usia >= 21 && usia <= 24;
+        kriteria = `Berat ideal: ${tinggi - 109} kg`;
+      }
+
+      document.getElementById("hasil4").innerHTML = `
+        <p>${kriteria}</p>
+        <p><strong>${diterima ? "DITERIMA ✅" : "TIDAK DITERIMA ❌"}</strong></p>
+      `;
+    }
+
+    // Tampilkan tab pertama secara default
+    openTab('latihan1');
+  </script>
+
+  <!-- Fixed Team Footer -->
+  <footer class="team-footer">
+    <div class="footer-container">
+      <div class="team-members">
+        <div class="member-card">
+          <div class="photo-frame">
+            <img src="potopoto.jpg" alt="Novi" class="member-photo">
+          </div>
+        </div>
+        
+        <div class="member-card">
+          <div class="photo-frame">
+            <img src="potoayam.jpg" alt="Tri" class="member-photo">
+          </div>
+        </div>
+        
+        <div class="member-card">
+          <div class="photo-frame">
+            <img src="potokita.jpg" alt="Juni" class="member-photo">
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="photo-frame">
+            <img src="potocitra.webp" alt="Citra" class="member-photo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+</body>
+</html>
